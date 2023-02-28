@@ -1,0 +1,234 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('../Fuentes/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf'),
+         url('../Fuentes/Montserrat_Alternates/MontserratAlternates-Bold.ttf'),
+         url('../Fuentes/Montserrat_Alternates/MontserratAlternates-ExtraBold.ttf');    
+}
+@font-face {
+    font-family: Anton;
+    src: url('../Fuentes/Anton/Anton-Regular.ttf'); 
+}
+body{margin: 0;}
+/*Header*/
+header{
+    background-color: #a4d9f8;
+    margin: 0;
+    width: 100%;
+}
+nav{
+    font-size: 22px;
+    font-family: Montserrat;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #a4d9f8;
+    height: 80px;
+  }
+  nav li{
+    margin-top: 10px;
+    height: 50%;
+  }
+  nav li a {
+    position: relative;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    padding: .5em 1em;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transition: transform 0.3s ease, color 0.3s;
+  }
+  nav a:hover::before {
+    transform: scaleX(1);
+  }
+  nav li a:hover {
+    color: white;
+}
+/**/
+/*Inicio*/
+main{
+    margin: 0;
+}
+.index{
+    z-index: 2;
+    background-image: url(/Multimedia/Portada.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative;
+    height: 890px;
+}
+#portadaImg{
+    float: left;
+    position: relative;
+    width: 73px;
+    left: 20px;
+    border-radius: 50px;
+}
+/**/
+.inicio{
+    display: flex;
+    top: 150px;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    width: 35%;
+    height: 40%;
+    border: white solid 2px;
+    flex-direction: column;
+    align-items: center;
+}
+#title{
+    margin: 0;
+    color: white;    
+    text-align: center;
+    font-size: 113px;
+    font-family: Anton;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 5px 7px 0px #0000009c;
+}
+#info{
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    animation: informate 2s infinite;
+}
+#info h4{
+    margin: auto;
+    border: solid 2px white;
+    width: 180px;
+    background-color: #a4d9f8;
+    font: oblique 20px Anton;
+    text-transform: uppercase;
+    padding: 5px;
+}
+@keyframes informate{
+    0% { scale: 1; }
+    50%{scale: 1.2; transform: rotateZ(2deg);}
+    100% {scale: 1; transform: rotateZ(0);}
+}
+#info:hover ~ #precio{
+    scale: 1.3;
+}
+#precio{
+    position: absolute;
+    left: 480px;
+    top: 0;
+    font: normal 42px Anton;
+    color:  white;
+    background-color: #79abc8;
+    padding: 12px;
+    scale: 1;
+    overflow: hidden;
+    border-radius: 100%;
+    text-align: center;
+    transform: rotateZ(10deg);
+    transition: all 0.3s
+}
+#precio::before{
+    content: '';
+    position: absolute;
+    top: -22%;
+    width: 200px;
+    height: 10px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform:
+    translateY(-20px)
+    translateX(-20px)
+    rotate(-26deg);
+}
+#info:hover ~ #precio::before{top: 120%;}
+.subir{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    background-color: white;
+    position: fixed;
+    float: right;
+    right: 40px;
+    bottom: 0;
+    margin-bottom: 40px;
+    font: bold 18px Montserrat;
+}
+/*Sobre Nosotros*/
+.sNosotros{
+    z-index: -2;
+    height: 950px;
+    background-color: #3a3b3d;
+}
+.info2{
+    float: left;
+    top: 25%;
+    left: 4%;
+    position: relative;
+    height: 60%;
+    width: 40%;
+    margin: auto;
+    border: solid 3px white;
+}
+.fNosotros{
+    float: left;
+    top: 18%;
+    left: 10%;
+    position: relative;
+    height: 60%;
+    width: 40%;
+    margin: auto;
+    border: solid 3px white;
+}
+#titleN{
+    margin: 0;
+    color: #a4d9f8;    
+    text-align: center;
+    font-size: 43px;
+    font-family: Anton;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 5px 7px 0px #0000009c;
+}
+.info2 p{
+    margin-left: 10px;
+    font: normal 24px Montserrat;
+    color: white;
+}
+/**/
+.menuHamburgesa{
+    
+}
+/*Responsive*/
+@media only screen and (max-width: 800px){
+    nav ul li {
+        justify-content: center;
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    nav ul li {
+        justify-content: center;
+        font-size: 80%;
+    }
+}

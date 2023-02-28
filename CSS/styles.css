@@ -1,0 +1,508 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('../Fuentes/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf'),
+         url('../Fuentes/Montserrat_Alternates/MontserratAlternates-Bold.ttf'),
+         url('../Fuentes/Montserrat_Alternates/MontserratAlternates-ExtraBold.ttf');    
+}
+@font-face {
+    font-family: Anton;
+    src: url('../Fuentes/Anton/Anton-Regular.ttf'); 
+}
+
+:root{
+    --main-bg-color: #a4d9f8;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+    font-size: 20px;
+    font-family: Montserrat;
+    background: var(--main-bg-color);
+    z-index: 3;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0px;
+    height: 60px;
+  }
+  nav li{
+    position: relative;
+    bottom: 10px;
+    padding: 0 2% 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  nav li a {
+    position: relative;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 2%;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transition: transform 0.3s ease, color 0.3s;
+  }
+  nav a:hover::before {
+    transform: scaleX(1);
+  }
+  nav li a:hover {
+    color: white;
+}
+#portadaImg{
+    float: left;
+    position: relative;
+    width: 73px;
+    left: 20px;
+    border-radius: 50px;
+}
+.menuHamburgesa{
+    width: 100%;
+}
+#LogIn{
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #4c95be96;
+}
+nav #LogIn::before{
+    bottom: 9px;
+    width: 85%;
+    left: 12px;
+    height: 3px;
+}
+.boton{display: none;}
+#chk{visibility: hidden;}
+/**/
+/*Inicio*/
+main{
+    margin: 0;
+}
+.index{
+    z-index: 2;
+    position: relative;
+    background-image: url(../Multimedia/Portada.jpg);
+    background-size: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative;
+    height: 890px;
+}
+#portadaImg{
+    float: left;
+    position: relative;
+    width: 73px;
+    left: 20px;
+    border-radius: 50px;
+}
+.inicio{
+    display: flex;
+    top: 150px;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    width: 35%;
+    height: 40%;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+}
+#title{
+    margin: 0;
+    color: white;    
+    text-align: center;
+    font-size: 130px; /*113px*/
+    font-family: Anton;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 5px 7px 0px #0000009c;
+    transition: font-size 0.5s;
+
+}
+#info{
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    animation: informate 2s infinite;
+}
+#info h4{
+    margin: auto;
+    border: solid 2px white;
+    width: 180px;
+    background-color: #a4d9f8;
+    font: oblique 20px Anton;
+    text-transform: uppercase;
+    padding: 5px;
+}
+@keyframes informate{
+    0% { scale: 1; }
+    50%{scale: 1.2; transform: rotateZ(2deg);}
+    100% {scale: 1; transform: rotateZ(0);}
+}
+#info:hover ~ #precio_cont{
+    scale: 1.3;
+}
+#precio_cont{
+    position: absolute;
+    left: 96%;
+    bottom: 73%;
+    transition: all 0.5s;
+    height: 95px;
+    width: 95px;
+    overflow: hidden;
+    scale: 1;
+    transform: rotateZ(10deg);
+    border-radius: 100%;
+    margin-left: 10px;
+}
+#precio{
+    position: relative;
+    top: 15px;
+    font: normal 42px Anton;
+    color:  white;
+    background-color: #79abc8;
+    padding: 12px;
+    scale: 1;
+    border-radius: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    border: solid white;
+    overflow: hidden;
+}
+#precio::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10px;
+    width: 200px;
+    height: 12px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform:
+    translateY(-20px)
+    translateX(-20px)
+    rotate(-26deg);
+}
+#info:hover ~ #precio_cont > #precio::before{top: 150%;}
+.subir{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    background-color: white;
+    position: fixed;
+    float: right;
+    right: 40px;
+    bottom: 0;
+    margin-bottom: 40px;
+    font: bold 18px Montserrat;
+}
+/**/
+/*Sobre Nosotros*/
+.nosotros{
+    z-index: -2;
+    margin: 0;
+    background-color: #4d4d4d;
+    height: 1000px;
+}
+.info_box{
+    position: relative;
+    /* border: solid black; */
+    height: 35%;
+    width: 25%;
+    left: 10%;
+    top: 25%;
+}
+#title_info{
+    text-shadow: 4px 5px 0px #0000009c;
+    color: var(--main-bg-color);
+    font: oblique 42px Anton;
+    margin: 0;
+    transition: font-size 0.5s;
+}
+#title_info ~ p{
+    font: normal 18px Verdana;
+    color: white;
+    text-align: justify;
+}
+.cajon_fotos{
+    position: relative;
+    margin: auto;
+    left: 15%;
+    bottom: 15%;
+    /* border: solid black; */
+    width: 45%;
+    height: 55%;
+}
+.cajon_fotos img{
+    width: 40%;
+    box-shadow: 0px 0px 6px 1px black, 9px 13px 5px 1px #3e3a3a;;
+    float: left;
+    margin-left: 50px;
+    transition: width 0.5s;
+}
+.cajon_fotos img:first-child{
+    position: relative;
+    bottom: 30px;
+}
+/**/
+/*Servicios*/
+.servicios{
+    margin: 0;
+    background-color: #2c2b2b;
+    /* height: 1000px; */
+}
+#info_serv{
+    position: relative;
+    top: 50px;
+    width: 50%;
+    margin: auto;
+    border: solid white;
+    text-align: center;
+}
+#info_serv > #title_info{
+    text-transform: uppercase;
+    font-size: 70px;
+}
+.serv_img{
+    display: flex;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    width: 95%;
+    min-height: 500px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.img_serv{
+    display: flex;
+    min-width: 30%;
+    min-height: 100%;
+    background-size: cover;
+    text-shadow: 4px 5px 0px #0000009c;
+    color: white;
+    font: oblique 28px Anton;
+    margin: 0;
+    text-align: center;
+    transition: font-size 0.5s;
+    align-items: center;
+    justify-content: center;
+
+}
+#img1{background-image: url(../Multimedia/bedida_gimnasio.jpg);}
+#img2{background-image: url(../Multimedia/pesonal_1.jpg); background-position: 50%;}
+#img3{background-image: url(../Multimedia/pesas_3.jpg); background-position: 20%;}
+/**/
+/*responsive*/
+@media only screen and (max-width: 1500px){
+    .inicio{
+        width: 50%;
+    }
+    #title{
+        font-size: 90px;
+    }
+    #precio_cont{
+        left: 85%;
+        bottom: 60%;
+    }
+    .index{
+        background-position: 50%;
+    }
+}
+@media only screen and (max-width: 1300px){
+    .inicio{
+        width: 50%;
+    }
+    #precio_cont{
+        left: 85%;
+        bottom: 60%;
+    }
+    #title_info{font-size: 2em;}
+    #title_info ~ p{font-size: 90%;}
+
+    .cajon_fotos img{
+        width: 38%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .serv_img{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .img_serv{
+        margin-top: 20px;
+        width: 300px;
+        height: 400px;
+    }
+}
+@media only screen and (max-width: 990px){
+    /*Menu*/
+    #LogIn{
+        border: none;
+        background-color: #00000000;
+        width: 100%;
+        padding: 0;
+    }
+    nav #LogIn::before{
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+    nav{
+        position: relative;
+        height: 90px;
+    }
+    .menu_label{
+        position: absolute;
+        width: 100%;
+        background-color:#437592;
+        box-shadow: 0px 3px 8px 1px #098685;
+    }
+    #color{
+        z-index: 0;
+        background-color:#a4d9f8;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .menu_label ul{
+        position: relative;
+        top: 10px;
+        display: block;
+        padding: 0;
+        margin: 0;
+        height: 80px;
+    }
+    .menu_label li{
+        margin-bottom: 2px;
+        display: flex;
+        float: right;
+        margin-left: 5%;
+        width: 96%;
+        height: 60px;
+        background-color: #77c5f2;
+        box-shadow: inset 0px 0px 4px 0px black;
+    }
+    .menu_label li a{
+        display: flex;
+        text-align: right;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    nav a::before{
+        bottom: 5px;
+    }
+    .menuHamburgesa {
+        z-index: -1;
+        position: relative;
+        bottom: 0%;
+        transition: bottom 0.8s, opacity 0.7s;
+        transition-delay: 1s;
+    }
+    .boton{
+        background-image: url(../Multimedia/menu.png);
+        position: relative;
+        float: right;
+        width: 30px;
+        height: 30px;
+        top: 40%;
+        right: 2%;
+        display: block;
+        background-size: cover;
+    }
+    #ocultar {
+        top: -250px;
+        display: block;
+        transition: all 0.5s;
+    }
+    #chk{display: none;}
+    #chk:checked ~ .boton{
+        background-image: url(../Multimedia/cerrarMenu.png);
+    }
+    #chk:checked ~ #ocultar {
+        top: 90px;
+        display: block;
+    }
+    .serv_img{
+        height: 70%;
+    }
+    /**/
+    /*Contenido*/
+    .inicio{
+        width: 100%;
+        font-size: 1em;
+    }
+    #precio_cont{
+        left: 70%;
+        bottom: 55%;
+        scale: 0.8;
+    }
+    #title{font-size: 4em;}
+}
+@media only screen and (max-width: 970px){
+    .index{
+        background-position: 50%;
+    }
+    .inicio{
+        height: 60%;
+        width: 60%;
+    }
+    .cajon_fotos{
+        width: 30%;
+    }
+    .cajon_fotos img{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 800px){
+    #precio_cont{
+        left: 75%;
+    }
+}
+@media only screen and (max-width: 600px){
+    #precio_cont{
+        left: 90%;
+    }
+    .nosotros{
+    }
+    .info_box{
+        position: relative;
+        height: 60%;
+        width: 30%;
+        font-size: 90%;
+        top: 10%;
+    }
+    .cajon_fotos{
+        position: relative;
+        top: -40%;
+    }
+    .cajon_fotos img{
+        width: 100%;
+    }
+}
